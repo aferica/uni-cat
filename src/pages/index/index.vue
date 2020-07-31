@@ -1,8 +1,8 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
+	<view>
+    <cu-custom bgColor="bg-gradual-pink"><block slot="content">操作条</block></cu-custom>
+		<view class="content">
+			<text class="title" @click="goToHome">{{title}}</text>
 		</view>
 	</view>
 </template>
@@ -18,7 +18,11 @@
 
 		},
 		methods: {
-
+      goToHome() {
+        uni.navigateTo({
+          url: '/pages/home/home'
+        });
+      }
 		}
 	}
 </script>
